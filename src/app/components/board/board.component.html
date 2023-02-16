@@ -1,0 +1,17 @@
+<div class="board">
+    <ng-container *ngIf="data; then details"></ng-container>
+    <ng-template #details>
+        <h2> {{ data?.name }} </h2>
+        <h1> {{ data?.temp }} C </h1>
+        <div class="pos">
+            <h3> Lon: {{ data?.lon }} </h3>
+            <h3> Lat: {{ data?.lat }} </h3>
+        </div>
+        <div class="wind">
+            <h3> Wind Speed</h3>
+            <span class="material-symbols-outlined">air</span>
+            <h3> {{ data?.windSpeed }} </h3>
+        </div>
+    </ng-template>
+    <h1 [ngClass]="{ error: true, active: error }"> {{error}} </h1>
+</div>

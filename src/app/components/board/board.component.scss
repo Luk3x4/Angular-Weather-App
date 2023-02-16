@@ -1,0 +1,36 @@
+@use '../../styles/mixins';
+
+.board{
+    background: rgb(57, 19, 230);
+    border: 0;
+    border-radius: 10px;
+    margin-top: 20px;
+    height: 83%;
+    padding: 15px;
+    @include mixins.flex(space-around, center);
+    flex-direction: column;
+    h1, h2{
+        color: white;
+    }
+    .pos{
+        @include mixins.flex(center, center);
+        gap: 30px;
+        h3{
+            color: white;
+        }
+    }
+    .wind{
+        @include mixins.flex(center, center);
+        color: white;
+        gap: 5px;
+    }
+    .error{
+        text-transform: capitalize;
+        position: absolute;
+        color: transparent;
+        transition: .5s ease-in-out;
+        &.active{
+            color: white;
+        }
+    }
+}

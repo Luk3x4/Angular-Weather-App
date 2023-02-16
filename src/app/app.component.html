@@ -1,0 +1,11 @@
+<div class="container">
+    <div class="weather-box">
+        <div class="inp">
+            <form (ngSubmit)="getWeatherData()">
+                <input type="text" [(ngModel)]="query" placeholder="Enter A City..." name="query" id="">
+                <button type="submit"> Search </button>
+            </form>
+        </div>
+        <app-board [data]="weatherData" [error]="error"></app-board>
+    </div>
+</div>

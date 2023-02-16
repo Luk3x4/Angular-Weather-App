@@ -1,0 +1,47 @@
+@use './styles/mixins';
+
+.container{
+    height: 100vh;
+    @include mixins.flex(center, center);
+    .weather-box{
+        background: rgb(43, 2, 230);
+        width: 45vw;
+        height: 350px;
+        border-radius: 10px;
+        padding: 15px;
+        @media screen and (max-width: 900px){
+            width: 85vw;
+            height: 300px;
+        }
+        .inp{
+            form{
+                @include mixins.flex(center, center);
+                gap: 2px;
+                input{
+                    width: calc(100% - 65px);
+                    outline: none;
+                    height: 25px;
+                    border: 0;
+                    padding: 0 5px;
+                    border-radius: 5px 0 0 5px;
+                    font-size: 16px;
+                }
+                button{
+                    height: 25px;
+                    width: 55px;
+                    border-radius: 0 5px 5px 0;
+                    border: 0;
+                    cursor: pointer;
+                    background:rgb(57, 19, 230);
+                    color: white;
+                    font-size: 16px;
+                    transition: .5s ease-in-out;
+                    padding: 2px;
+                    &:hover{
+                        background: rgb(93, 61, 236);
+                    }
+                }
+            }
+        }
+    }
+}
